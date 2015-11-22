@@ -14,7 +14,7 @@
             <h:form id="formListagem" prependId="false">
                 <p:growl/>
 
-                <p:commandButton actionListener="#{controleMateriaPrima.novo()}" value="Novo"
+                <p:commandButton actionListener="#{controleMateriaPrima.novo()}" value="Nova Matéria Prima"
                                  oncomplete="PF('dlg').show();" update=":formEdicao"/>
 
                 <p:dataTable value="#{controleMateriaPrima.dao.listarTodos}" var="obj">
@@ -27,11 +27,15 @@
                     </f:facet>
 
                     <p:column headerText="Código">
-                        <p:outputLabel value="#{obj.codigo}"/>
+                        <div align="center">
+                            <p:outputLabel value="#{obj.codigo}"/>
+                        </div>
                     </p:column>
 
                     <p:column headerText="Nome">
-                        <p:outputLabel value="#{obj.nome}"/>
+                        <div align="center">
+                            <p:outputLabel value="#{obj.nome}"/>
+                        </div>
                     </p:column>
 
                     <p:column headerText="Ações">
@@ -92,7 +96,7 @@
                             <f:selectItem itemLabel="Selecione um registro" noSelectionOption="true"/>
                             
                             <f:selectItems value="#{controleMateriaPrima.daoFornecedor.listarTodos}"
-                                           var="m" itemLabel="#{m.nome}"/>
+                                           var="f" itemLabel="#{f.nome}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
                 </h:form>

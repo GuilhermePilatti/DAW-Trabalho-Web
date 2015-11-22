@@ -14,7 +14,7 @@
             <h:form id="formListagem" prependId="false">
                 <p:growl/>
 
-                <p:commandButton actionListener="#{controleClienteJuridico.novo()}" value="Novo"
+                <p:commandButton actionListener="#{controleClienteJuridico.novo()}" value="Novo Cliente Jurídico"
                                  oncomplete="PF('dlg').show();" update=":formEdicao"/>
 
                 <p:dataTable value="#{controleClienteJuridico.dao.listarTodos}" var="obj">
@@ -27,11 +27,15 @@
                     </f:facet>
 
                     <p:column headerText="Código">
-                        <p:outputLabel value="#{obj.codigo}"/>
+                        <div align="center">
+                            <p:outputLabel value="#{obj.codigo}"/>
+                        </div>
                     </p:column>
 
                     <p:column headerText="Nome">
-                        <p:outputLabel value="#{obj.nome}"/>
+                        <div align="center">
+                            <p:outputLabel value="#{obj.nome}"/>
+                        </div>
                     </p:column>
 
                     <p:column headerText="Ações">
@@ -86,12 +90,12 @@
                                      size="50" maxlength="50" placeholder="Obrigatório"/>
                         
                         <p:outputLabel value="CNPJ" for="txtCNPJ"/>
-                        <p:inputText id="txtCNPJ" value="#{controleClienteJuridico.objeto.cnpj}"
-                                     size="18" maxlength="18" placeholder="Obrigatório"/>
+                        <p:inputMask id="txtCNPJ" value="#{controleClienteJuridico.objeto.cnpj}"
+                                     size="18" mask="99.999.999/999-99"/>
                         
                         <p:outputLabel value="Inscrição estadual" for="txtIE"/>
-                        <p:inputText id="txtIE" value="#{controleClienteJuridico.objeto.ie}"
-                                     size="15" maxlength="15" placeholder="Obrigatório"/>
+                        <p:inputMask id="txtIE" value="#{controleClienteJuridico.objeto.ie}"
+                                     size="15" mask="999.999.999.999"/>
                     </p:panelGrid>
                 </h:form>
                 

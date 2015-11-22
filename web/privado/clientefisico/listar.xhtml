@@ -14,7 +14,7 @@
             <h:form id="formListagem" prependId="false">
                 <p:growl/>
 
-                <p:commandButton actionListener="#{controleClienteFisico.novo()}" value="Novo"
+                <p:commandButton actionListener="#{controleClienteFisico.novo()}" value="Novo Cliente Físico"
                                  oncomplete="PF('dlg').show();" update=":formEdicao"/>
 
                 <p:dataTable value="#{controleClienteFisico.dao.listarTodos}" var="obj">
@@ -27,11 +27,15 @@
                     </f:facet>
 
                     <p:column headerText="Código">
-                        <p:outputLabel value="#{obj.codigo}"/>
+                        <div align="center">
+                            <p:outputLabel value="#{obj.codigo}"/>
+                        </div>
                     </p:column>
 
                     <p:column headerText="Nome">
-                        <p:outputLabel value="#{obj.nome}"/>
+                        <div align="center">
+                            <p:outputLabel value="#{obj.nome}"/>
+                        </div>
                     </p:column>
 
                     <p:column headerText="Ações">
@@ -86,8 +90,8 @@
                                      size="50" maxlength="50" placeholder="Obrigatório"/>
                         
                         <p:outputLabel value="CPF" for="txtCPF"/>
-                        <p:inputText id="txtCPF" value="#{controleClienteFisico.objeto.cpf}"
-                                     size="14" maxlength="14" placeholder="Obrigatório"/>
+                        <p:inputMask id="txtCPF" value="#{controleClienteFisico.objeto.cpf}"
+                                     size="14" mask="999.999.999-99"/>
                         
                         <p:outputLabel value="RG" for="txtRG"/>
                         <p:inputText id="txtRG" value="#{controleClienteFisico.objeto.rg}"

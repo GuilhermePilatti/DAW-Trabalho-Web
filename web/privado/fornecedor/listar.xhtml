@@ -14,7 +14,7 @@
             <h:form id="formListagem" prependId="false">
                 <p:growl/>
 
-                <p:commandButton actionListener="#{controleFornecedor.novo()}" value="Novo"
+                <p:commandButton actionListener="#{controleFornecedor.novo()}" value="Novo Fornecedor"
                                  oncomplete="PF('dlg').show();" update=":formEdicao"/>
 
                 <p:dataTable value="#{controleFornecedor.dao.listarTodos}" var="obj">
@@ -27,11 +27,15 @@
                     </f:facet>
 
                     <p:column headerText="Código">
-                        <p:outputLabel value="#{obj.codigo}"/>
+                        <div align="center">
+                            <p:outputLabel value="#{obj.codigo}"/>
+                        </div>
                     </p:column>
 
                     <p:column headerText="Nome">
-                        <p:outputLabel value="#{obj.nome}"/>
+                        <div align="center">
+                            <p:outputLabel value="#{obj.nome}"/>
+                        </div>
                     </p:column>
 
                     <p:column headerText="Ações">
@@ -82,12 +86,12 @@
                                      size="50" maxlength="50" placeholder="Obrigatório"/>
                         
                         <p:outputLabel value="CNPJ" for="txtCNPJ"/>
-                        <p:inputText id="txtCNPJ" value="#{controleFornecedor.objeto.cnpj}"
-                                     size="18" maxlength="18" placeholder="Obrigatório"/>
+                        <p:inputMask id="txtCNPJ" value="#{controleFornecedor.objeto.cnpj}"
+                                     size="18" mask="99.999.999/9999-99"/>
                         
                         <p:outputLabel value="Telefone" for="txtTelefone"/>
-                        <p:inputText value="#{controleFornecedor.objeto.telefone}" id="txtTelefone"
-                                     size="14" maxlength="14" placeholder="Obrigatório"/>
+                        <p:inputMask value="#{controleFornecedor.objeto.telefone}" id="txtTelefone"
+                                     size="14" mask="(99)9999-9999"/>
                     </p:panelGrid>
                 </h:form>
                 

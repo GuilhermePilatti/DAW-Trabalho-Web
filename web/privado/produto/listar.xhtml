@@ -14,7 +14,7 @@
             <h:form id="formListagem" prependId="false">
                 <p:growl/>
                 
-                <p:commandButton value="Nova Produto"
+                <p:commandButton value="Novo Produto"
                                  actionListener="#{controleProduto.novo()}"
                                  update=":formEdicao"
                                  process="@form"
@@ -29,11 +29,15 @@
                     </f:facet>
                     
                     <p:column headerText="Código">
-                        <p:outputLabel value="#{obj.codigo}"/>
+                        <div align="center">
+                            <p:outputLabel value="#{obj.codigo}"/>
+                        </div>
                     </p:column>
                     
                     <p:column headerText="Nome">
-                        <p:outputLabel value="#{obj.nome}"/>
+                        <div align="center">
+                            <p:outputLabel value="#{obj.nome}"/>
+                        </div>
                     </p:column>    
                     
                     <p:column headerText="Ações">
