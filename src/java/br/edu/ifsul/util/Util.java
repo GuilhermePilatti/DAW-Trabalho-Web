@@ -22,4 +22,16 @@ public class Util {
         FacesMessage mensagem = new FacesMessage(FacesMessage.SEVERITY_ERROR, strMensagem, "");
         FacesContext.getCurrentInstance().addMessage(null, mensagem);
     }
+    
+    public static String getMessageErro(Exception e) {
+        while(e.getCause() != null) {
+            e = (Exception) e.getCause();
+        }
+        String erro = e.getMessage();
+        
+        if (erro.contains("operador não existe")) {
+            erro = "Erro de operador!";
+        }
+        return erro;
+    }
 }

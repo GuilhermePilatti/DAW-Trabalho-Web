@@ -44,7 +44,7 @@ public class ControleFornecedor implements Serializable{
             
             Util.mensagemInformacao("Objeto persistido com sucesso");
         } catch(Exception e){
-            Util.mensagemErro(e.getMessage());
+            Util.mensagemErro("Erro ao remover objeto "+Util.getMessageErro(e));
         }
     }
     
@@ -52,7 +52,7 @@ public class ControleFornecedor implements Serializable{
         try{
             objeto = dao.getObjectById(id);
         } catch(Exception e){
-            Util.mensagemErro(e.getMessage());
+            Util.mensagemErro("Erro ao remover objeto "+Util.getMessageErro(e));
         }
     }
     
@@ -61,7 +61,7 @@ public class ControleFornecedor implements Serializable{
             dao.remover(id);
             Util.mensagemInformacao("Objeto removido com sucesso");
         } catch(Exception e){
-            Util.mensagemErro(e.getMessage());
+            Util.mensagemErro("Erro ao remover objeto "+Util.getMessageErro(e));
         }
     }
 
