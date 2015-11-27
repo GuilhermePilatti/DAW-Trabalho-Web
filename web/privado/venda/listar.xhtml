@@ -107,7 +107,7 @@
                             <f:selectItem itemLabel="Selecione um registro" noSelectionOption="true"/>
                             
                             <f:selectItems value="#{controleVenda.daoPedido.listarTodos}"
-                                           var="p" itemLabel="#{p.codigo}"/>
+                                           var="p" itemLabel="#{p.pedidoVendas}"/>
                         </p:selectOneMenu>
 
                         <p:outputLabel value="Data do venda" for="txtDataVenda"/>
